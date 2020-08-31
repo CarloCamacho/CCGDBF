@@ -1,0 +1,29 @@
+{
+  "name": "CCGDBF",
+  "version": "1.0.0",
+  "description": "Captain Cook's Generic Discord Bot of Fun",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarloCamacho/CCGDBF.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarloCamacho/CCGDBF/issues"
+  },
+  "homepage": "https://github.com/CarloCamacho/CCGDBF#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "better-sqlite3": "^7.1.0",
+    "chalk": "^4.1.0",
+    "discord.js": "^12.3.1",
+    "enmap": "^5.7.1",
+    "moment": "^2.27.0",
+    "moment-duration-format": "^2.3.2"
+  }
+}
