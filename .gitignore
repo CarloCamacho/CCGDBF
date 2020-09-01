@@ -2,6 +2,7 @@
 # Node BOT Config files
 config.json
 .env
+config.js
 
 # Logs
 logs
