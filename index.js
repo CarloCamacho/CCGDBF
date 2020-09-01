@@ -16,10 +16,9 @@ const Enmap = require("enmap");
 const client = new Discord.Client();
 
 // Here we load the config file that contains our token and our prefix values.
-// client.config = require("./config.js");
+client.config = require("./config.js");
 // client.config.token contains the bot's token
 // client.config.prefix contains the message prefix
-const { prefix, token } = require('./config.json');
 
 // Require our logger
 client.logger = require("./modules/Logger");
@@ -66,8 +65,15 @@ const init = async () => {
     client.on(eventName, event.bind(null, client));
   });
 
+  // Generate a cache of client permissions for pretty perm names in commands.
+  client.levelCache = {};
+  for (let i = 0; i < client.config.permLevels.length; i++) {
+    const thisLevel = client.config.permLevels[i];
+    client.levelCache[thisLevel.name] = thisLevel.level;
+  }
+
   // Here we login the client.
-  client.login(token);
+  client.login(client.config.token);
 
 // End top-level async/await function.
 };
