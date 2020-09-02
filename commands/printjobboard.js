@@ -3,7 +3,7 @@ This prints the job board ...
 */
 
 exports.run = (client, message, args, level) => {
-    
+
 const figlet = require('figlet');
 
 figlet('Hello World!!', function(err, data) {
@@ -12,7 +12,7 @@ figlet('Hello World!!', function(err, data) {
         console.dir(err);
         return;
     }
-    console.log(data)
+    message.channel.send(data)
 });
 
 //     // If no specific command is called, show all filtered commands.
