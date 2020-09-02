@@ -4,6 +4,12 @@ config.json
 .env
 config.js
 
+# SQLite stuff
+*sqlite*
+
+# Enmap stuff
+*Enmap*
+
 # Logs
 logs
 *.log
