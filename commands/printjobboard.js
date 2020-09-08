@@ -4,10 +4,11 @@ This prints the job board ...
 const { promisify } = require("util");
 const readdir = promisify(require("fs").readdir);
 var fs = require('fs');
-
+const Enmap = require("enmap");
 
 exports.run = async (client, message, args, level) => {
-    
+
+  client.jobs = new Enmap();    
   // Here we load **jobs** into memory, as a collection, so they're accessible
   // here and everywhere else.
   const jobFiles = await readdir("./jobs/");
@@ -26,10 +27,10 @@ exports.run = async (client, message, args, level) => {
     const sorted = myJobs.array().sort((p, c) => p.info.category > c.info.category ? 1 :  p.info.name > c.info.name && p.info.category === c.info.category ? 1 : -1 );
     sorted.forEach( c => {
       const cat = c.info.category.toProperCase();
-//      if (currentCategory !== cat) {
-//        output += `\u200b\n== ${cat} ==\n`;
-//        currentCategory = cat;
-//      }
+      if (currentCategory !== cat) {
+        output += `\u200b\n== ${cat} ==\n`;
+        currentCategory = cat;
+      }
       output += `${c.info.name}${" ".repeat(longest - c.info.name.length)} :: ${c.info.description}\n`;
     });
     message.channel.send(output, {code: "asciidoc", split: { char: "\u200b" }});
