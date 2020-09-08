@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/CarloCamacho/CCGDBF#readme",
   "dependencies": {
+    "async": "^3.2.0",
+    "aws-sdk": "^2.747.0",
     "axios": "^0.20.0",
     "better-sqlite3": "^7.1.0",
     "chalk": "^4.1.0",
