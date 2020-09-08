@@ -122,6 +122,20 @@ module.exports = (client) => {
     }
   };
 
+  client.loadJobs = (jobName) => {
+    try {
+      client.logger.log(`Loading Jobs: ${jobName}`);
+      const jobsprops = require(`../jobs/${jobName}`);
+      if (jobsprops.init) {
+        jobsprops.init(client);
+      }
+      client.jobs.set(jobsprops.info.name, jobsprops);
+      return false;
+    } catch (e) {
+      return `Unable to load command ${jobName}: ${e}`;
+    }
+  };
+
   client.unloadCommand = async (commandName) => {
     let command;
     if (client.commands.has(commandName)) {
