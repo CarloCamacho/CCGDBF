@@ -2,14 +2,11 @@ const axios = require('axios');
 
 exports.run = async (client, message, args, level) => {
 
-const openweatherapi = message.settings.openweatherapi;
-const testDayChannel = message.settings.testDayChannel;
-const testNightChannel = message.settings.testNightChannel;
-// let guildFind = message.guild.channels.cache.find(channel => channel.id === testNightChannel)
-  // let output = `${message.settings.welcomeChannel}\n`;
-
-  // message.channel.send(output);
-  // message.channel.send(guildFind); 
+let openweatherapi = client.config.openweatherapi;
+let testDayChannel = client.config.testDayChannel;
+let testNightChannel = client.config.testNightChannel;
+let duskDayChannel = client.config.duskDayChannel;
+let duskNightChannel = client.config.duskNightChannel;
 
   axios
   .get(
@@ -30,8 +27,10 @@ const testNightChannel = message.settings.testNightChannel;
           let currentTemp = Math.ceil(apiData.data.current.temp)
           let maxTempF = apiData.data.daily[0].temp.max;
           let minTempF = apiData.data.daily[0].temp.min;
-          message.guild.channels.cache.find(channel => channel.id === testDayChannel).setName(`Day: ${maxTemp}°C/${maxTempF}°F `);
-          message.guild.channels.cache.find(channel => channel.id === testNightChannel).setName(`Night: ${minTemp}°C/${minTempF}°F`); 
+          message.guild.channels.cache.find(channel => channel.id === duskDayChannel).setName(`Day: ${maxTemp}°C/${maxTempF}°F `);
+          message.guild.channels.cache.find(channel => channel.id === duskNightChannel).setName(`Night: ${minTemp}°C/${minTempF}°F`); 
+          message.channel.send(`Max C: ${maxTemp}, Min C: ${minTemp}`)
+          message.channel.send(`Max F: ${maxTempF}, Min F: ${minTempF}`)
           message.channel.send(`Updated the Weather Channels!`);
       })
   })
@@ -47,9 +46,9 @@ exports.conf = {
     };
     
     exports.help = {
-    name: "setweather",
+    name: "setDuskweather",
     category: "Miscelaneous",
     description: "Sets the weather on the weather channels to the current temps in Denver.",
-    usage: "setweather"
+    usage: "setDuskweather"
     };
     
