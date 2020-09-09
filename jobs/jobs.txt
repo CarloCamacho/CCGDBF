@@ -1,6 +1,6 @@
-Office Worker
-Barrista
 Cafe Owner
 Superintendent
-Stripper
 Tattoo Artist
+Nurse
+Doctor
+Grave Digger

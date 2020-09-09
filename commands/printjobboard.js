@@ -14,6 +14,7 @@ exports.run = async (client, message, args, level) => {
   const jobFiles = await readdir("./jobs/");
   client.logger.log(`Loading a total of ${jobFiles.length} jobs.`);
   jobFiles.forEach(f => {
+    if (!f.endsWith(".js")) return;
     const response = client.loadJobs(f);
     if (response) console.log(response);
     });
