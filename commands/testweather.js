@@ -39,7 +39,7 @@ let duskNightChannel = client.config.duskNightChannel;
 
 
 exports.conf = {
-    enabled: true,
+    enabled: false,
     guildOnly: false,
     aliases: [],
     permLevel: "Administrator"

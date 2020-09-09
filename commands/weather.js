@@ -65,6 +65,6 @@ exports.conf = {
 exports.help = {
   name: "weather",
   category: "Miscelaneous",
-  description: "Displays a custom embed with the current weather in Denver.",
+  description: "Displays a custom embed with the current weather in Dusk Ville City.",
   usage: "weather"
 };

@@ -48,7 +48,7 @@ exports.conf = {
     exports.help = {
     name: "setweather",
     category: "Miscelaneous",
-    description: "Sets the weather on the weather channels to the current temps in Denver.",
+    description: "Sets the weather on the weather channels to the current temps based on Denver.",
     usage: "setweather"
     };
     
