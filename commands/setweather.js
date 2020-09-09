@@ -27,8 +27,8 @@ let duskNightChannel = client.config.duskNightChannel;
           let currentTemp = Math.ceil(apiData.data.current.temp)
           let maxTempF = apiData.data.daily[0].temp.max;
           let minTempF = apiData.data.daily[0].temp.min;
-          message.guild.channels.cache.find(channel => channel.id === testDayChannel).setName(`Day: ${maxTemp}°C/${maxTempF}°F `);
-          message.guild.channels.cache.find(channel => channel.id === testNightChannel).setName(`Night: ${minTemp}°C/${minTempF}°F`); 
+          message.guild.channels.cache.find(channel => channel.id === duskDayChannel).setName(`Day: ${maxTemp}°C/${maxTempF}°F `);
+          message.guild.channels.cache.find(channel => channel.id === duskNightChannel).setName(`Night: ${minTemp}°C/${minTempF}°F`); 
           message.channel.send(`Max C: ${maxTemp}, Min C: ${minTemp}`)
           message.channel.send(`Max F: ${maxTempF}, Min F: ${minTempF}`)
           message.channel.send(`Updated the Weather Channels!`);
@@ -46,9 +46,9 @@ exports.conf = {
     };
     
     exports.help = {
-    name: "setTestweather",
+    name: "setweather",
     category: "Miscelaneous",
-    description: "Sets the weather on the test server only for debug purposes.",
-    usage: "setTestweather"
+    description: "Sets the weather on the weather channels to the current temps in Denver.",
+    usage: "setweather"
     };
     
