@@ -46,7 +46,7 @@ exports.run = async (client, message, args, level) => {
   
   exports.help = {
     name: "printjobboard",
-    category: "System",
+    category: "Miscelaneous",
     description: "Prints a new version of the jobs board with the current listings.",
     usage: "printjobboard"
   };
