@@ -1,8 +1,5 @@
 # Captain Cook's General Discord Bot of Fun (CCGDBF)
 
-[![Build Status](https://travis-ci.com/github/CarloCamacho/CCGDBF.svg?branch=master)](https://travis-ci.com/github/CarloCamacho/CCGDBF)
-
-
 ## Background
 
 A simple Discord bot based on the fantastic 'An Idiots Guide' : https://anidiots.guide/
@@ -12,7 +9,9 @@ I've set this bot up on a roleplaying server I help run to learn about bots in g
 I've added a couple of commands specific to the server and will likely expand as I learn more:
  - Display a custom embed with the current weather of the Server.
  - Set the weather on the specified weather channels. 
+ - Print a formatted 7-day weather forecast for the server
  - Print a jobs board based on a file format stored in the 'jobs' folder
+
  
 ## What's next?!
 
