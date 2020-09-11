@@ -35,7 +35,7 @@ exports.conf = {
 
 exports.help = {
   name: "printforecast",
-  category: "System",
+  category: "Miscelaneous",
   description: "Print out a 7 Day forecast for Dusk Ville City.",
   usage: "printforecast"
 };

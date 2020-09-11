@@ -32,7 +32,7 @@ exports.conf = {
   
   exports.help = {
     name: "serverinfo",
-    category: "System",
+    category: "Miscelaneous",
     description: "Prints useful information about the server.",
     usage: "serverinfo"
   };
