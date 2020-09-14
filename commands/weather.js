@@ -34,7 +34,7 @@ exports.run = (client, message, args, level) => { // eslint-disable-line no-unus
   
       axios
           .get(
-              `https://api.openweathermap.org/data/2.5/onecall?lat=39.74&lon=-104.98&exclude=minutely,hourly&units=metric&appid=daa6a7f969e2e3a145196d552939c173`
+              `https://api.openweathermap.org/data/2.5/onecall?lat=39.74&lon=-104.98&exclude=minutely,hourly&units=metric&appid=${openweatherapi}`
           )
           .then(response => {
               let apiData = response;
