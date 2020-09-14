@@ -32,7 +32,8 @@ exports.run = async (client, message, args, level) => {
         output += `\u200b\n== ${cat} ==\n`;
         currentCategory = cat;
       }
-      output += `${c.info.name}${" ".repeat(longest - c.info.name.length)} :: ${c.info.description}\n`;
+      output += `${c.info.name}`;
+      output += `${" ".repeat(longest - c.info.name.length)} :: ${c.info.description}\n`;
     });
     message.channel.send(output, {code: "asciidoc", split: { char: "\u200b" }});
 };
