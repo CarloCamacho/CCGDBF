@@ -1,3 +1,6 @@
+
+[![Run on Repl.it](https://repl.it/badge/github/CarloCamacho/CCGDBF)](https://repl.it/github/CarloCamacho/CCGDBF)
+
 # Captain Cook's General Discord Bot of Fun (CCGDBF)
 
 ## Background
