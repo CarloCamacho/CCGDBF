@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const axios = require('axios')
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
+  message.channel.send('Testing');
   const openweatherapi = client.config.openweatherapi;
   const forecastEmbed = (
     sunMin,
@@ -22,12 +23,28 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   ) =>
     new Discord.MessageEmbed()
       .setColor('#0099ff')
-      .setAuthor(`Hello, ${author}`, profile)
       .setTitle(`The seven day forecast for Dusk Ville City is:`)
       .addField(`Monday`, `Min: ${monMin}\u00B0 C`, true)
       .addField(`\u200b`, `Max: ${monMax}\u00B0 C`, true)
+      .addField(`\u200b`, `\u200b`, true)
       .addField(`Tuesday`, `Min: ${tueMin}\u00B0 C`, true)
       .addField(`\u200b`, `Max: ${tueMax}\u00B0 C`, true)      
+      .addField(`\u200b`, `\u200b`, true)      
+      .addField(`Wednesday`, `Min: ${tueMin}\u00B0 C`, true)
+      .addField(`\u200b`, `Max: ${tueMax}\u00B0 C`, true)    
+      .addField(`\u200b`, `\u200b`, true)       
+      .addField(`Thursday`, `Min: ${tueMin}\u00B0 C`, true)
+      .addField(`\u200b`, `Max: ${tueMax}\u00B0 C`, true)      
+      .addField(`\u200b`, `\u200b`, true)     
+      .addField(`Friday`, `Min: ${tueMin}\u00B0 C`, true)
+      .addField(`\u200b`, `Max: ${tueMax}\u00B0 C`, true)      
+      .addField(`\u200b`, `\u200b`, true)     
+      .addField(`Saturday`, `Min: ${tueMin}\u00B0 C`, true)
+      .addField(`\u200b`, `Max: ${tueMax}\u00B0 C`, true)      
+      .addField(`\u200b`, `\u200b`, true)     
+      .addField(`Sundary`, `Min: ${tueMin}\u00B0 C`, true)
+      .addField(`\u200b`, `Max: ${tueMax}\u00B0 C`, true)      
+      .addField(`\u200b`, `\u200b`, true)     
       .setFooter('The Admins', 'https://cdn.discordapp.com/emojis/734211956390756354.png')
       .setThumbnail(`https://cdn.discordapp.com/attachments/731358750480531467/735120472919900180/IMG_20200717_222537_524.jpg`);
 
@@ -52,37 +69,21 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
               let satMin = Math.ceil(apiData.data.daily[7].temp.min)
               let satMax = Math.ceil(apiData.data.daily[7].temp.max)
               message.channel.send(forecastEmbed(sunMin,sunMax,monMin,monMax,tueMin,tueMax,wedMin,wedMax,thuMin,thuMax,friMin,friMax,satMin,satMax));
-          }
-
-              
-
-// Code formatted version - looks good on Desktop, but not Mobile :(
-
-// message.channel.send(' ',{files: ["https://cdn.discordapp.com/attachments/731358750480531467/735120472919900180/IMG_20200717_222537_524.jpg"]});
-// message.channel.send(`== Weekly Weather for Dusk Ville City ==\n
-// • Sunday       ::     Min: ${sunMin}°C,         Max: ${sunMax}°C
-// • Monday       ::     Min: ${monMin}°C,         Max: ${monMax}°C
-// • Tuesday      ::     Min: ${tueMin}°C,         Max: ${tueMax}°C
-// • Wednesday    ::     Min: ${wedMin}°C,         Max: ${wedMax}°C
-// • Thursday     ::     Min: ${thuMin}°C,         Max: ${thuMax}°C
-// • Friday       ::     Min: ${friMin}°C,         Max: ${friMax}°C
-// • Saturday     ::     Min: ${satMin}°C,         Max: ${satMax}°C`, {code: "asciidoc"});
-              
-
-})
-     
+          })
 };
+    
+
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: [],
-  permLevel: "Administrator"
+  permLevel: "User"
 };
 
 exports.help = {
-  name: "printforecast",
+  name: "printembedforecast",
   category: "Miscelaneous",
   description: "Print out a 7 Day forecast for Dusk Ville City.",
-  usage: "printforecast"
+  usage: "printembedforecast"
 };
