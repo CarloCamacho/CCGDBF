@@ -11,15 +11,24 @@ let hybridRole = client.config.hybridRole;
 let humanChannel = client.config.humanChannel;
 let humanRole = client.config.humanRole;
 
-const guild = await message.guild.fetchMembers();
-
-//let vampCount = message.guild.roles.cache.get(vampRole).members.size;
-let vampCount = guild.roles.get(vampRole).members.size;
+let vampCount = message.guild.roles.cache.get(vampRole).members.size;
+let wolfCount = message.guild.roles.cache.get(wolfRole).members.size;
+let hybridCount = message.guild.roles.cache.get(hybridRole).members.size;
+let humanCount = message.guild.roles.cache.get(humanRole).members.size;
 
 message.guild.channels.cache.find(channel => channel.id === vampChannel).setName(`Vamps: ${vampCount}`);
-message.channel.send(vampCount + " members with the vamp role!");
+message.guild.channels.cache.find(channel => channel.id === wolfChannel).setName(`Vamps: ${wolfCount}`);
+message.guild.channels.cache.find(channel => channel.id === hybridChannel).setName(`Vamps: ${hybridCount}`);
+message.guild.channels.cache.find(channel => channel.id === humanChannel).setName(`Vamps: ${humanCount}`);
+
+message.channel.send("Setting...");
+message.channel.send(vampCount + " members with the vamp role.");
+message.channel.send(wolfCount + " members with the wolf role.");
+message.channel.send(hybridCount + " members with the hybrid role.");
+message.channel.send(humanCount + " members with the human role.");
 
 }
+
 
 exports.conf = {
     enabled: true,
