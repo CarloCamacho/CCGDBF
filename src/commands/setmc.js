@@ -7,7 +7,7 @@ let vampRole = client.config.vampRole;
 
 //let guild = await message.guild.fetchMembers();
 
-let vampCount = guild.roles.get(vampRole).members.size;
+let vampCount = message.guild.roles.cache.get(vampRole).members.size;
 
 message.guild.channels.cache.find(channel => channel.id === vampChannel).setName(`Vamps: ${vampCount}`);
 message.channel.send(vampCount + " members with the vamp role!");
