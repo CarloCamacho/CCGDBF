@@ -4,10 +4,17 @@ exports.run = async (client, message, args, level) => {
 
 let vampChannel = client.config.vampChannel;
 let vampRole = client.config.vampRole;
+let wolfChannel = client.config.wolfChannel;
+let wolfRole = client.config.wolfRole;
+let hybridChannel = client.config.hybridChannel;
+let hybridRole = client.config.hybridRole;
+let humanChannel = client.config.humanChannel;
+let humanRole = client.config.humanRole;
 
-//let guild = await message.guild.fetchMembers();
+const guild = await message.guild.fetchMembers();
 
-let vampCount = message.guild.roles.cache.get(vampRole).members.size;
+//let vampCount = message.guild.roles.cache.get(vampRole).members.size;
+let vampCount = guild.roles.get(vampRole).members.size;
 
 message.guild.channels.cache.find(channel => channel.id === vampChannel).setName(`Vamps: ${vampCount}`);
 message.channel.send(vampCount + " members with the vamp role!");
