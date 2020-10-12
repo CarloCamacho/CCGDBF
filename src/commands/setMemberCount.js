@@ -3,11 +3,14 @@ const axios = require('axios');
 exports.run = async (client, message, args, level) => {
 
 let vampChannel = client.config.vampChannel;
+let vampRole = client.config.vampRole;
 
-let vampCount = count of vampires;
+//let guild = await message.guild.fetchMembers();
+
+let vampCount = guild.roles.get(vampRole).members.size;
 
 message.guild.channels.cache.find(channel => channel.id === vampChannel).setName(`Vamps: ${vampCount}`);
-message.channel.send(`Updated the Species Count!`);
+message.channel.send(vampCount + " members with the vamp role!");
 
 }
 
