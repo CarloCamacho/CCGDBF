@@ -18,13 +18,13 @@ exports.conf = {
     enabled: true,
     guildOnly: false,
     aliases: [],
-    permLevel: "Administrator"
+    permLevel: "User"
     };
     
     exports.help = {
-    name: "setSpeciesCount",
+    name: "setmc",
     category: "Miscelaneous",
     description: "Sets the species counts based on the current member list.",
-    usage: "setSpeciesCount"
+    usage: "setmc"
     };
     
