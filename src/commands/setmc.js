@@ -16,10 +16,10 @@ let wolfCount = message.guild.roles.cache.get(wolfRole).members.size;
 let hybridCount = message.guild.roles.cache.get(hybridRole).members.size;
 let humanCount = message.guild.roles.cache.get(humanRole).members.size;
 
-message.guild.channels.cache.find(channel => channel.id === vampChannel).setName(`Vamps: ${vampCount}`);
-message.guild.channels.cache.find(channel => channel.id === wolfChannel).setName(`Vamps: ${wolfCount}`);
-message.guild.channels.cache.find(channel => channel.id === hybridChannel).setName(`Vamps: ${hybridCount}`);
-message.guild.channels.cache.find(channel => channel.id === humanChannel).setName(`Vamps: ${humanCount}`);
+message.guild.channels.cache.find(channel => channel.id === vampChannel).setName(`Vampires: ${vampCount}`);
+message.guild.channels.cache.find(channel => channel.id === wolfChannel).setName(`Werewolves: ${wolfCount}`);
+message.guild.channels.cache.find(channel => channel.id === hybridChannel).setName(`Hybrids: ${hybridCount}`);
+message.guild.channels.cache.find(channel => channel.id === humanChannel).setName(`Humans: ${humanCount}`);
 
 message.channel.send("Setting...");
 message.channel.send(vampCount + " members with the vamp role.");
