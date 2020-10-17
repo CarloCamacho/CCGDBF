@@ -1,5 +1,3 @@
-const axios = require('axios');
-
 exports.run = async (client, message, args, level) => {
 
 let vampChannel = client.config.vampChannel;
